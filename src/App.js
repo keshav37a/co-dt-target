@@ -28,7 +28,9 @@ function App() {
         alert("Intercepted a message from unknown source");
         return;
       }
-      alert(`message recieved - ${event.data}`);
+      alert(
+        `message recieved - clientId: ${event.data.clientId}, ClientSecret:${event.data.clientSecret}, User-profile-id: ${event.data["User-profile-id"]}`
+      );
       console.log(event);
     },
     false
