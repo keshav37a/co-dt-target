@@ -6,6 +6,7 @@ function App() {
     window.addEventListener(
       "message",
       (event) => {
+        console.log("EVENT RECIEVED IN TARGET");
         console.log(event);
         if (event.origin !== "https://co-dt-source.web.app") {
           alert("Intercepted a message from unknown source");
@@ -14,7 +15,6 @@ function App() {
         console.log(
           `message recieved - ClientId: ${event.data.ClientId}, ClientSecret:${event.data.ClientSecret}, User-profile-id: ${event.data["User-profile-id"]}`
         );
-        console.log(event);
       },
       false
     );
