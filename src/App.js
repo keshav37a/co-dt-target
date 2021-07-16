@@ -15,6 +15,10 @@ function App() {
         console.log(
           `message recieved - ClientId: ${event.data.ClientId}, ClientSecret:${event.data.ClientSecret}, User-profile-id: ${event.data["User-profile-id"]}`
         );
+        event.source.postMessage(
+          "hi there yourself!  the secret response " + "is: rheeeeet!",
+          event.origin
+        );
       },
       false
     );
@@ -27,6 +31,9 @@ function App() {
       console.log(JSON.stringify(window.name));
       console.log(JSON.parse(window.name)); */
     }
+
+    window.parent.postMessage("loaded", "https://co-dt-source.web.app");
+
     return () => {
       window.removeEventListener("message");
     };
