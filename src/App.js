@@ -17,8 +17,12 @@ function App() {
         console.log(`recieved data from - ${event.origin}`);
         console.log("EVENT RECIEVED IN TARGET");
         console.log(event.data);
-        if (event.origin !== "https://co-dt-source.web.app") {
-          alert("Intercepted a message from unknown source");
+        if (event.origin === "https://co-dt-source.web.app") {
+          console.log("EVENT RECIEVED FROM SOURCE IN TARGET");
+          return;
+        }
+        if (event.origin === "https://co-dt-target.herokuapp.com") {
+          console.log("EVENT RECIEVED FROM TARGET IN TARGET");
           return;
         }
         event.source.postMessage(
