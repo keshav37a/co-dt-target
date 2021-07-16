@@ -7,7 +7,7 @@ function App() {
   }
 
   useEffect(() => {
-    window.parent.postMessage("loaded", "*");
+    window.opener.postMessage("loaded", "*");
 
     console.log(window.parent);
 
