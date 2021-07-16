@@ -2,23 +2,35 @@ import { useEffect } from "react";
 import "./App.css";
 
 function App() {
-  useEffect(() => {
-    window.addEventListener(
-      "message",
-      (event) => {
-        if (event.origin !== "https://co-dt-source.web.app/") {
-          alert("Intercepted a message from unknown source");
-          return;
-        }
-        console.log(event);
-      },
-      false
-    );
+  // useEffect(() => {
+  //   window.addEventListener(
+  //     "message",
+  //     (event) => {
+  //       if (event.origin !== "https://co-dt-source.web.app/") {
+  //         alert("Intercepted a message from unknown source");
+  //         return;
+  //       }
+  //       console.log(event);
+  //     },
+  //     false
+  //   );
 
-    return () => {
-      window.removeEventListener("message");
-    };
-  }, []);
+  //   /* return () => {
+  //     window.removeEventListener("message");
+  //   }; */
+  // }, []);
+
+  window.addEventListener(
+    "message",
+    (event) => {
+      if (event.origin !== "https://co-dt-source.web.app/") {
+        alert("Intercepted a message from unknown source");
+        return;
+      }
+      console.log(event);
+    },
+    false
+  );
 
   return (
     <div className="App">
