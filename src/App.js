@@ -2,20 +2,12 @@ import { useEffect } from "react";
 import "./App.css";
 
 function App() {
-  if (window) {
-    console.log(window.parent);
-  }
-
   useEffect(() => {
-    window.opener.postMessage("loaded", "*");
-
-    console.log(window.parent);
-
+    window.opener.postMessage("target loaded", "*");
     window.addEventListener(
       "message",
       (event) => {
         console.log(`recieved data from - ${event.origin}`);
-        console.log("EVENT RECIEVED IN TARGET");
         console.log(event.data);
         if (event.origin === "https://co-dt-source.web.app") {
           console.log("EVENT RECIEVED FROM SOURCE IN TARGET");
@@ -25,8 +17,9 @@ function App() {
           console.log("EVENT RECIEVED FROM TARGET IN TARGET");
           return;
         }
+        console.log(`event.source ${event.source}`);
         event.source.postMessage(
-          "hi there yourself!  the secret response " + "is: rheeeeet!",
+          "2nd run - sent data from target to source",
           event.origin
         );
       },
