@@ -3,6 +3,10 @@ import "./App.css";
 
 function App() {
   useEffect(() => {
+    window.parent.postMessage("loaded", "*");
+
+    console.log(window.parent);
+
     window.addEventListener(
       "message",
       (event) => {
@@ -29,8 +33,6 @@ function App() {
       console.log(JSON.stringify(window.name));
       console.log(JSON.parse(window.name)); */
     }
-
-    window.parent.postMessage("loaded", "*");
 
     return () => {
       window.removeEventListener("message");
