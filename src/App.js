@@ -19,8 +19,7 @@ function App() {
       false
     );
     if (window.name) {
-      var data = JSON.parse(window.name);
-      console.log("data via window.name", data);
+      console.log("data via window.name", window.name);
     }
     return () => {
       window.removeEventListener("message");
