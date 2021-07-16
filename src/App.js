@@ -20,6 +20,8 @@ function App() {
     );
     if (window.name) {
       console.log("data via window.name", window.name);
+      console.log(JSON.stringify(window.name));
+      console.log(JSON.parse(window.name));
     }
     return () => {
       window.removeEventListener("message");
