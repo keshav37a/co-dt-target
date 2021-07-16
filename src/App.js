@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import "./App.css";
 
 function App() {
+  if (window) {
+    console.log(window.parent);
+  }
+
   useEffect(() => {
     window.parent.postMessage("loaded", "*");
 
