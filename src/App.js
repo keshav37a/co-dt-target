@@ -29,7 +29,7 @@ function App() {
         return;
       }
       alert(
-        `message recieved - clientId: ${event.data.clientId}, ClientSecret:${event.data.clientSecret}, User-profile-id: ${event.data["User-profile-id"]}`
+        `message recieved - ClientId: ${event.data.ClientId}, ClientSecret:${event.data.ClientSecret}, User-profile-id: ${event.data["User-profile-id"]}`
       );
       console.log(event);
     },
