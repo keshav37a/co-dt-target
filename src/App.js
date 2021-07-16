@@ -23,12 +23,12 @@ function App() {
   window.addEventListener(
     "message",
     (event) => {
-      console.log(event.origin);
       console.log(event);
-      if (event.origin !== "https://co-dt-source.web.app/") {
+      if (event.origin !== "https://co-dt-source.web.app") {
         alert("Intercepted a message from unknown source");
         return;
       }
+      alert(`message recieved - ${event.data}`);
       console.log(event);
     },
     false
