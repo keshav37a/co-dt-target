@@ -32,7 +32,7 @@ function App() {
       console.log(JSON.parse(window.name)); */
     }
 
-    window.parent.postMessage("loaded", "https://co-dt-source.web.app");
+    window.parent.postMessage("loaded", "*");
 
     return () => {
       window.removeEventListener("message");
