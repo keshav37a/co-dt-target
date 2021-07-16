@@ -11,11 +11,9 @@ function App() {
         console.log(event.data);
         if (event.origin === "https://co-dt-source.web.app") {
           console.log("EVENT RECIEVED FROM SOURCE IN TARGET");
-          return;
         }
         if (event.origin === "https://co-dt-target.herokuapp.com") {
           console.log("EVENT RECIEVED FROM TARGET IN TARGET");
-          return;
         }
         console.log(`event.source ${event.source}`);
         event.source.postMessage(
