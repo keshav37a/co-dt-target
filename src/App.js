@@ -19,12 +19,13 @@ function App() {
       false
     );
     if (window.name) {
-      console.log(window);
+      console.log(JSON.parse(window.name));
+      /* console.log(window);
       console.log(window.data);
       console.log(window.clientId);
       console.log("data via window.name", window.name);
       console.log(JSON.stringify(window.name));
-      console.log(JSON.parse(window.name));
+      console.log(JSON.parse(window.name)); */
     }
     return () => {
       window.removeEventListener("message");
