@@ -15,7 +15,6 @@ function App() {
         if (event.origin === "https://co-dt-target.herokuapp.com") {
           console.log("EVENT RECIEVED FROM TARGET IN TARGET");
         }
-        console.log(`event.source ${event.source}`);
         event.source.postMessage(
           "2nd run - sent data from target to source",
           event.origin
