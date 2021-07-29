@@ -4,16 +4,18 @@ import "./App.css";
 
 function App() {
   useEffect(() => {
-    window.opener.postMessage("target loaded", "*");
-    window.addEventListener(
-      "message",
-      (event) => {
-        if (event.origin === "https://co-dt-source.web.app") {
-          cogoToast.success(`data recieved - ${JSON.stringify(event.data)}`);
-        }
-      },
-      false
-    );
+    if (window?.opener) {
+      window.opener.postMessage("target loaded", "*");
+      window.addEventListener(
+        "message",
+        (event) => {
+          if (event.origin === "https://co-dt-source.web.app") {
+            cogoToast.success(`data recieved - ${JSON.stringify(event.data)}`);
+          }
+        },
+        false
+      );
+    }
     return () => {
       window.removeEventListener("message");
     };
