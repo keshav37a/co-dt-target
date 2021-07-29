@@ -3,6 +3,8 @@ import cogoToast from "cogo-toast";
 import "./App.css";
 
 function App() {
+  console.log("testing");
+
   useEffect(() => {
     if (window?.opener) {
       window.opener.postMessage("target loaded", "*");
