@@ -13,7 +13,8 @@ function App() {
         (event) => {
           console.log("message recieved");
           console.log(event.data);
-          if (event.origin === "https://co-dt-source.web.app") {
+          console.log(event.data);
+          if (event.origin === "https://co-dt-src.web.app") {
             cogoToast.success(`data recieved - ${JSON.stringify(event.data)}`);
           }
         },
