@@ -6,10 +6,13 @@ function App() {
   console.log("testing");
   useEffect(() => {
     if (window?.opener) {
+      console.log("event listener added");
       window.opener.postMessage("target loaded", "*");
       window.addEventListener(
         "message",
         (event) => {
+          console.log("message recieved");
+          console.log(event.data);
           if (event.origin === "https://co-dt-source.web.app") {
             cogoToast.success(`data recieved - ${JSON.stringify(event.data)}`);
           }
